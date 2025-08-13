@@ -1,0 +1,1 @@
+echo "# FastAPI Project"
