@@ -1,4 +1,4 @@
-from tamp import add
+from temp import add
 
 
 def test_add() -> None:
