@@ -11,6 +11,7 @@ fastapi = "^0.115.6"
 uvicorn = "^0.32.1"
 orjson = "3.10.12"
 sqids = "^0.5.2"
+gel = "^3.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
