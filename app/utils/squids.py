@@ -5,13 +5,15 @@ import sqids
 
 sqid = sqids.Sqids()
 
+
 class Squids:
 
     @classmethod
     def encode(cls, nums: list[int]) -> str:
         return sqid.encode(nums)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     now = datetime.now()
     print(
         Squids.encode(
