@@ -8,10 +8,17 @@ module default {
     }
     
     type Meeting extending Auditable {
-        required url_code: str{
-            constraint exclusive;
+        required url_code: str {
+            constraint exclusive;  # sql 의 UNIQUE
             readonly := true;
-		    };
+        };
+        start_date -> cal::local_date;
+        end_date -> cal::local_date;
+        required title: str {
+            default := "";
+        };
+        required location: str {
+            default := "";
+        };
     }
-    
 }
