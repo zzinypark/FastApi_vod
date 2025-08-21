@@ -9,14 +9,16 @@ from app.queries.meeting.get_meeting_by_url_code_async_edgeql import (
     get_meeting_by_url_code,
 )
 from app.queries.meeting.models import FullMeeting
-from app.queries.meeting.update_meeting_location_async_edgeql import UpdateMeetingLocationResult, \
-    update_meeting_location
+from app.queries.meeting.update_meeting_location_async_edgeql import (
+    UpdateMeetingLocationResult,
+    update_meeting_location,
+)
 from app.queries.meeting.update_meeting_start_end_async_edgeql import (
     update_meeting_start_end,
 )
 from app.queries.meeting.update_meeting_title_async_edgeql import (
-    update_meeting_title,
     UpdateMeetingTitleResult,
+    update_meeting_title,
 )
 from app.utils.base62 import Base62
 from app.utils.edge import edgedb_client

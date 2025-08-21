@@ -3,11 +3,12 @@
 
 
 from __future__ import annotations
+
 import dataclasses
+import uuid
 from typing import cast
 
 import edgedb
-import uuid
 
 
 @dataclasses.dataclass
@@ -24,7 +25,7 @@ async def update_meeting_title(
     return cast(
         UpdateMeetingTitleResult | None,
         await executor.query_single(
-        """\
+            """\
         with
             url_code := <str>$url_code,
             title := <str>$title,
@@ -32,7 +33,7 @@ async def update_meeting_title(
         filter .url_code = url_code
         set {title := title}\
         """,
-        url_code=url_code,
-        title=title,
-    )
+            url_code=url_code,
+            title=title,
+        ),
     )

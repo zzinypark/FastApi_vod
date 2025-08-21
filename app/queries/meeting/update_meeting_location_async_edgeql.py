@@ -3,11 +3,13 @@
 
 
 from __future__ import annotations
-import dataclasses
-import edgedb
-import uuid
 
+import dataclasses
+import uuid
 from typing import cast
+
+import edgedb
+
 
 @dataclasses.dataclass
 class UpdateMeetingLocationResult:
@@ -23,7 +25,7 @@ async def update_meeting_location(
     return cast(
         UpdateMeetingLocationResult | None,
         await executor.query_single(
-        """\
+            """\
         with
             url_code := <str>$url_code,
           location := <str>$location,
@@ -31,7 +33,7 @@ async def update_meeting_location(
         filter .url_code = url_code
         set {location := location}\
         """,
-        url_code=url_code,
-        location=location,
-    ),
+            url_code=url_code,
+            location=location,
+        ),
     )

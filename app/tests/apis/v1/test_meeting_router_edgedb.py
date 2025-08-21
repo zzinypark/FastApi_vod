@@ -4,9 +4,9 @@ import httpx
 from httpx import AsyncClient
 from starlette.status import (
     HTTP_200_OK,
+    HTTP_204_NO_CONTENT,
     HTTP_404_NOT_FOUND,
     HTTP_422_UNPROCESSABLE_ENTITY,
-    HTTP_204_NO_CONTENT,
 )
 
 from app import app
@@ -49,7 +49,6 @@ async def test_api_get_meeting() -> None:
     assert response_body["end_date"] is None
     assert response_body["title"] == ""
     assert response_body["location"] == ""
-
 
 
 async def test_api_get_meeting_404() -> None:
